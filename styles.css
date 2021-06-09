@@ -1,0 +1,272 @@
+body {
+    background-color: rgba(90, 80, 80, 0.658);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#board {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+    width: fit-content;
+    display: flex;
+}
+
+.slot {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.victory {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: solid 15px white;
+    transform: translate(10px, 10px);
+}
+
+.hole {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 40px rgb(18, 18, 20);
+    transform: translate(-30px, -30px);
+}
+
+.select {
+    background-color: white;
+}
+
+#menu {
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    top: 100px;
+    background-color: rgb(18, 18, 20);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+#counter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+#counter h3 {
+    border-radius: 10px;
+    margin: 0;
+}
+
+#settings {
+    background-color: brown;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+#settings > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#settings h3 {
+    margin: 5px;
+}
+
+#settings > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+}
+
+#settings > div > div > button {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: white;
+}
+
+#settings > div > div > button:first-child {
+    line-height: 27px;
+}
+
+#settings button {
+    border-radius: 5px;
+}
+
+#Player1 {
+    background-color: red;
+}
+
+#Player2 {
+    background-color: yellow;
+}
+
+#menu > button {
+    margin-top: 10px;
+    width: 100%;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    color: white;
+    border-radius: 10px;
+}
+
+#menu > button.play-again {
+    background-color: green;
+}
+
+#reset {
+    background-color: rgba(255, 0, 0, 0.747);
+}
+
+#modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+}
+
+#modal-dialog {
+    position: fixed;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 18px;
+    opacity: 0;
+}
+
+#modal-background.on {
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+#modal-dialog.on {
+    opacity: 1;
+    transition: opacity 600ms;
+}
+
+#modal-dialog #close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    outline: none;
+}
+
+.coin {
+    position: absolute;
+    z-index: -2;
+    top: -100px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transform: translateY(0);
+}
+
+.Player1-coin {
+    background-color: red;
+}
+
+.Player2-coin {
+    background-color: yellow;
+}
+
+#vs-computer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(5, 70, 19);
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* taken from w3schools */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 27px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(22px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
